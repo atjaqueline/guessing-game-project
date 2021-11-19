@@ -64,7 +64,7 @@ function checkLetter(button) {
     for (i = 0; i < letters.length; i++){
         if (button.textContent === letters[i].textContent) {
             letters[i].classList.add('show');
-            letters[i].style.transition = '1s ease-in';
+            letters[i].style.transition = '.5s ease-in-out';
              match = true;
         } 
     }
