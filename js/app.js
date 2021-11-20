@@ -5,14 +5,10 @@ const startGame = document.querySelector(".btn__reset");
 const overlay = document.getElementById("overlay");
 const ul = document.querySelector('#phrase ul');
 
-
 // track number of wrong guesses
 let missed = 0;
 
-
-
-
-// Created an array of five phrases and labeled it as phrases 
+// Create an array of five phrases 
 let phrases = [
     "hello world",
     "coding is fun",
@@ -21,12 +17,10 @@ let phrases = [
     "love nature"
 ]; 
 
-// attach an event listener to the start game button to hide the start screen overlay
-
+// add an event listener to the start game button to hide the start screen overlay
 startGame.addEventListener('click', ( ) => {
     overlay.style.display = 'none';
 });
-
 
 // return a random phrase from array
 function getRandomPhrasesAsArray(arr) {
@@ -37,7 +31,7 @@ function getRandomPhrasesAsArray(arr) {
 
  const getPhrase = getRandomPhrasesAsArray(phrases);
 
-// add random phrases to display
+// add random phrases to the display
 function addPhraseToDisplay(arr){
     const ul = phrase.querySelector("#phrase ul");
     for (i=0; i < arr.length; i++){
@@ -50,7 +44,6 @@ function addPhraseToDisplay(arr){
         } else {
             li.className = 'letter';
         }
-
     }
 }
 
@@ -71,10 +64,9 @@ function checkLetter(button) {
     return match;
 }
 
-//add an event listener to the keyboard
+// listen for the onscream keyboard to be clicked
 qwerty.addEventListener('click', (e) => {
     const hearts = document.querySelectorAll('img');
-
 
     if(e.target.tagName === 'BUTTON') {
         e.target.className = 'chosen';
@@ -92,7 +84,7 @@ qwerty.addEventListener('click', (e) => {
     }
 });
 
-// create a checkwin function
+// check if the game has been won or lost
 function checkWin() {
     const letterClass = document.getElementsByClassName('letter');
     const showClass = document.getElementsByClassName('show');
